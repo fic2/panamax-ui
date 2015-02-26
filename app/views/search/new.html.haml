@@ -17,11 +17,11 @@
   = render 'blog_item'
 
 .filterable-list
-  %h1 Search Panamax Templates & Docker Repositories
+  %h1 Search for SE Templates & Docker Repositories
   = form_for @search_result_set, url: search_path, method: :get, html: {class: 'search-form'} do |f|
     = f.text_field :q, placeholder: 'enter your query', accesskey: 's', class: 'query-field'
     = f.button 'Search', class: 'button-primary'
-    %p.microcopy Examples: Rails, redis, NGiNX, mongoDB, you get the picture...
+    %p.microcopy Examples: fic2, Rails, redis, NGiNX, mongoDB, ...
 
   = render 'keyword_cloud', keywords: @keywords_sorted_by_term, sort_title: 'Count', sorted_by: :name, display_style: 'none'
   = render 'keyword_cloud', keywords: @keywords_sorted_by_count, sort_title: 'Name', sorted_by: :count
@@ -35,8 +35,3 @@
 
   #template-details-dialog
 
-%section.blog-feed
-  %h3 From the CenturyLink Labs Blog
-  %ul.blog-feed-items{ data: { source: 'http://centurylinklabs.com/feed' } }
-  %a.blog-link{href: 'http://centurylinklabs.com'}
-    View more at CenturyLinkLabs.com

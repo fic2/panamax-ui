@@ -16,7 +16,7 @@ body > header {
   background: $ctl_light_green;
   width: 100%;
   overflow: hidden;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 
   h1 {
     border: none;
@@ -31,6 +31,19 @@ body > header {
     background: image-url('pmx_logo.svg') no-repeat center center $dark_grey;
     @include background-size(148px, 19px);
     width: 178px;
+    display: block;
+    height: 60px;
+  }
+
+  h1.ficontent-logo {
+    float: right;
+  }
+
+  h1.ficontent-logo a {
+    @include border-box;
+    @include hide-text;
+    background: image-url('logo-fi_content.png') no-repeat center center #A6CA75;
+    width: 255px;
     display: block;
     height: 60px;
   }
@@ -556,7 +569,7 @@ footer {
     margin: 0 auto;
 
     #footer-info {
-      width: 45%;
+      width: 75%;
       float: left;
 
       h4 {
@@ -565,7 +578,7 @@ footer {
       }
 
       > p {
-        padding-bottom: 70px;
+        padding-bottom: 7px;
       }
 
       ul li {
