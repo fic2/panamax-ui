@@ -45,6 +45,8 @@ class ServicesController < ApplicationController
     @service = retrieve_service
     @service.write_attributes(params[:service])
 
+    @service.publish_all = params[:service].has_key?('publish_all')
+
     if @service.save
       respond_to do |format|
         format.html { redirect_to app_service_path(params[:app_id], @service.id) }

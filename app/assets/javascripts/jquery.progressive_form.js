@@ -28,6 +28,7 @@
     base.bindEvents = function() {
       base.$el.on('click', base.options.removeLinkSelector, base.handleRemove);
       base.$el.on('change', 'select', base.handleFormChange);
+      base.$el.on('change', 'input, checkbox', base.handleFormChange);
       base.$el.on('keyup', 'input, textarea', base.handleFormChange);
     };
 

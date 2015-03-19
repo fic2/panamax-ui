@@ -10,6 +10,7 @@
       $containerName: $('.breadcrumbs ul li:last-of-type'),
       $imageName: $('#image-name'),
       $serviceCommand: $('#service_command'),
+      $servicePublishAll: $('#service_publish_all'),
       serviceLinksSelector: '.service-links > ul.entries > li',
       linkNameSelector: '.link-name',
       linkAliasSelector: '.link-alias',
@@ -54,7 +55,8 @@
         volumes: base.volumes(),
         volumesFrom: base.volumesFrom(),
         imageName: base.imageName(),
-        command: base.command()
+        command: base.command(),
+        publish_all: base.publish_all()
       };
 
       parts = (new $.PMX.DockerRunGenerator(opts)).toArray();
@@ -170,10 +172,18 @@
       return base.extractText(base.options.$serviceCommand);
     };
 
+    base.publish_all = function() {
+      return base.extractText(base.options.$servicePublishAll);
+    };
+
     base.extractText = function($element) {
       var value;
       if ($element[0].tagName == 'INPUT') {
-        value = $element.val();
+        if ($element[0].type == 'checkbox') {
+          value = $element.is(':checked').toString();
+        } else {
+          value = $element.val();
+        }
       } else if ($element[0].tagName == 'SELECT') {
         value = $element.find('option:selected').text();
       } else {

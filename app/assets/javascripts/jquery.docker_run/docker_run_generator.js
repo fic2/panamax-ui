@@ -115,10 +115,15 @@
       return options.command;
     };
 
+    var publish_all = function() {
+      return options.publish_all == 'true' ? '-P' : '';
+    };
+
     this.toArray = function() {
       var parts = [
         'docker run',
         containerName(),
+        publish_all(),
         linkFlags(),
         portFlags(),
         exposeFlags(),

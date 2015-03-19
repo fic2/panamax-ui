@@ -21,6 +21,7 @@ class Service < BaseResource
     string :sub_state
     string :type
     string :command
+    boolean :publish_all, default: true
   end
 
   def category_names
