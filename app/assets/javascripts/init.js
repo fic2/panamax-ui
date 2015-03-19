@@ -102,6 +102,8 @@
 
     $('.service-status').serviceStatus();
 
+    $('.ports-status').portsStatus();
+
     $('.service-details .inspect').dockerInspect();
 
     $('.application-services').appServicesStatus();

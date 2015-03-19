@@ -710,3 +710,22 @@ input.empty {
   font-size: 0.9em;
   display: none;
 }
+
+.ports-details {
+
+  h6 {
+    color: $dark_grey;
+    font-weight: bold;
+    margin-bottom: 5px;
+    padding-bottom: 0;
+  }
+
+  ul {
+    font-size: 0.9em;
+    margin-left: 15px;
+  }
+
+  .private {
+    color: $medium_grey;
+  }
+}
