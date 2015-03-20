@@ -3,7 +3,8 @@
     %img{src: presenter.icon}
   = link_to presenter.name,
             presenter.service_url,
-            title: 'service-details'
+            title: 'service-details',
+            class: 'under'
   .actions
     = link_to 'view',
               presenter.service_url,
