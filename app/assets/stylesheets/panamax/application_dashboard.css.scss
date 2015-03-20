@@ -14,7 +14,7 @@ section.applications {
   margin-bottom: 20px;
   width: 100%;
 
-  > div {
+  .application {
     display: table-row;
     border-bottom: 1px solid $light_grey;
     width: 100%;
@@ -61,8 +61,41 @@ section.applications {
 
   .actions {
     width: 420px;
-    padding-top: 20px;
+    /* padding-top: 20px; */
     position: relative;
+  }
+
+  .quick-access {
+    /*display: table-row;*/
+    width: 100%;
+    margin: 10px;
+    font-size: 0.8em;
+    color: $medium_grey;
+    /*border-bottom: 1px solid $light_grey;*/
+
+    > span {
+      font-weight: bold;
+      margin: 0 15px;
+    }
+
+    a {
+      font-size: 0.8em;
+      vertical-align: bottom;
+    }
+
+    > div {
+      /*display: table-cell;*/
+
+      ul {
+        margin-left: 15px;
+        padding: 5px;
+
+        span {
+          text-align: left;
+        }
+      }
+    }
+
   }
 }
 

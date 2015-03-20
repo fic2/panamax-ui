@@ -7,13 +7,14 @@
     base.timer = null;
 
     base.defaultOptions = {
-      refreshInterval: 11300,
-      currentInterval: 2000,
+      refreshInterval: 33300,
+      currentInterval: 2000 + Math.random() * 700,
       $portsRunning: base.$el.find('.ports-running')
     };
 
     base.init = function() {
       base.options = $.extend({}, base.defaultOptions, options);
+      base.options.$portsRunning = base.$el.find("#" + base.$el.data('target'));
       base.bindEvents();
       base.fetchStatus();
     };

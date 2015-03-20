@@ -6,12 +6,21 @@
                                                 yield(:title)]
 %section.applications
   - @apps.each do |app|
-    %div.application
-      .name
-        = link_to app.name, app_path(app.id)
-        %b= app.services.length
-        %span= app.service_count_label
-      .actions
-        = render 'application_button_menu', app: app
+    %div{ :style => 'display: table-row-group; border-bottom: 1px solid $light_grey;'}
+      %div.application
+        .name
+          = link_to app.name, app_path(app.id)
+          %b= app.services.length
+          %span= app.service_count_label
+          %div.quick-access
+            - app.services.each do |service|
+              - service_id = "service_id_#{service.id}"
+              .ports-status{ data: { target: service_id, source: app_service_path(app.id, service.id, format: :json) } }
+                %span= "Service #{service.id} quick access:"
+                %ul{:id => service_id}
+                  %li none
+
+        .actions
+          = render 'application_button_menu', app: app
 
   = link_to 'Create a New Application', root_path, class: 'button-add-positive'

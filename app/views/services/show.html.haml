@@ -43,10 +43,11 @@
       = link_to('Documentation', '#', { class: 'instructions-dialog', data: {'doc-url'=> documentation_app_path(@app.id)} })  if @app.documentation_to_html.present?
       = link_to 'Find on Docker Hub', @service.docker_search_url, { target: 'blank', data: { 'tracking-method' => 'click', 'tracking-action' => 'Find on Docker Hub', 'tracking-category' => 'Outbound Link', 'tracking-label' => @service.docker_search_url }}
 
-  .ports-status{ class: @service.status, data: { source: app_service_path(@app.id, @service.id, format: :json) } }
+  - ports_running_id = "ports_runnning_id_#{@service.id}"
+  .ports-status{ class: @service.status, data: { target: ports_running_id, source: app_service_path(@app.id, @service.id, format: :json) } }
     .ports-details
       %h6 Used ports:
-      %ul.ports-running
+      %ul.ports-running{:id => ports_running_id}
 
   = form_for [@app, @service], html: { class: 'service-edit-form' } do |f|
     = render 'shared/errors', errors: f.object.errors
