@@ -42,7 +42,7 @@ body > header {
   h1.ficontent-logo a {
     @include border-box;
     @include hide-text;
-    background: image-url('logo-fi_content.png') no-repeat center center #A6CA75;
+    background: image-url('logo-fi_content.png') no-repeat center center;
     width: 255px;
     display: block;
     height: 60px;
