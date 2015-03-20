@@ -6,7 +6,7 @@
 
     base.defaultOptions = {
       baseUrl: '/host_health',
-      interval: 6 * 1000
+      interval: 33000
     };
 
     base.init = function() {

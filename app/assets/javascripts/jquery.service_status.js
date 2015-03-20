@@ -7,7 +7,7 @@
     base.timer = null;
 
     base.defaultOptions = {
-      refreshInterval: 2000,
+      refreshInterval: 11100,
       $panamaxState: base.$el.find('.panamax-state'),
       $serviceSubState: base.$el.find('.sub-state'),
       $serviceActiveState: base.$el.find('.active-state'),

@@ -8,7 +8,7 @@
     base.cursor = '';
 
     base.defaultOptions = {
-      refreshInterval: 1000,
+      refreshInterval: 11000,
       journalLineTemplate: Handlebars.compile($('#journal_line_template').html()),
     };
 

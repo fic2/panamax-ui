@@ -7,7 +7,7 @@
     base.timer = null;
 
     base.defaultOptions = {
-      refreshInterval: 2500,
+      refreshInterval: 11230,
       rowSelector: '.category-panel ul.services li'
     };
 
