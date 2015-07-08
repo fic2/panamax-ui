@@ -36,12 +36,12 @@
   = render 'keyword_cloud', keywords: @keywords_sorted_by_term, sort_title: 'Count', sorted_by: :name, display_style: 'none'
   = render 'keyword_cloud', keywords: @keywords_sorted_by_count, sort_title: 'Name', sorted_by: :count
 
-  %h3.search-title Templates
-  .template-results
-
   %h3.search-title Images
   .local-image-results
   .remote-image-results
+
+  %h3.search-title Templates
+  .template-results
 
   #template-details-dialog
 
